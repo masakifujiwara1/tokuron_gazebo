@@ -52,22 +52,43 @@ def generate_launch_description():
         )
     )
 
-    robot_state_publisher_cmd = IncludeLaunchDescription(
+    # robot1
+    robot_state_publisher_cmd1 = IncludeLaunchDescription(
         # namespace='robot1',
         PythonLaunchDescriptionSource(
-            os.path.join(launch_file_dir, 'robot_state_publisher.launch.py')
+            os.path.join(launch_file_dir, 'multi_robot_state_publisher.launch.py')
         ),
-        launch_arguments={'use_sim_time': use_sim_time}.items()
+        launch_arguments={'use_sim_time': use_sim_time, 'robot_namespace': 'robot1'}.items(),
     )
 
-    spawn_turtlebot_cmd = IncludeLaunchDescription(
+    spawn_turtlebot_cmd1 = IncludeLaunchDescription(
         # namespace='robot1',
         PythonLaunchDescriptionSource(
-            os.path.join(launch_file_dir, 'spawn_turtlebot3.launch.py')
+            os.path.join(launch_file_dir, 'multi_spawn_turtlebot3_1.launch.py')
         ),
         launch_arguments={
             'x_pose': x_pose,
             'y_pose': y_pose
+        }.items()
+    )
+
+    # robot2
+    robot_state_publisher_cmd2 = IncludeLaunchDescription(
+        # namespace='robot1',
+        PythonLaunchDescriptionSource(
+            os.path.join(launch_file_dir, 'multi_robot_state_publisher.launch.py')
+        ),
+        launch_arguments={'use_sim_time': use_sim_time, 'robot_namespace': 'robot2'}.items(),
+    )
+
+    spawn_turtlebot_cmd2 = IncludeLaunchDescription(
+        # namespace='robot1',
+        PythonLaunchDescriptionSource(
+            os.path.join(launch_file_dir, 'multi_spawn_turtlebot3_2.launch.py')
+        ),
+        launch_arguments={
+            'x_pose': '-0.5',
+            'y_pose': '2.0'
         }.items()
     )
 
@@ -76,7 +97,9 @@ def generate_launch_description():
     # Add the commands to the launch description
     ld.add_action(gzserver_cmd)
     ld.add_action(gzclient_cmd)
-    ld.add_action(robot_state_publisher_cmd)
-    ld.add_action(spawn_turtlebot_cmd)
+    ld.add_action(robot_state_publisher_cmd1)
+    ld.add_action(spawn_turtlebot_cmd1)
+    ld.add_action(robot_state_publisher_cmd2)
+    ld.add_action(spawn_turtlebot_cmd2)
 
     return ld
