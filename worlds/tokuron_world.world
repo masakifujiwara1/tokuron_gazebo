@@ -72,7 +72,7 @@
     </scene>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-0.114236 -0.72805 8.03861 0 1.5698 0.009718</pose>
+        <pose>-4.05657 -1.16181 4.67029 -0 0.893798 0.121721</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -338,10 +338,10 @@
       <static>1</static>
     </model>
     <state world_name='default'>
-      <sim_time>379 639000000</sim_time>
-      <real_time>150 992700722</real_time>
-      <wall_time>1695384199 430918412</wall_time>
-      <iterations>150774</iterations>
+      <sim_time>613 113000000</sim_time>
+      <real_time>27 71860911</real_time>
+      <wall_time>1695385549 181938397</wall_time>
+      <iterations>27028</iterations>
       <model name='3.5x3.5_wall'>
         <pose>1.43231 1.55613 -2.37955 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -371,10 +371,10 @@
         </link>
       </model>
       <model name='ground'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 -0.012151 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='ground'>
-          <pose>0 0 0 0 -0 0</pose>
+          <pose>0 0 -0.012151 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -402,6 +402,9 @@
       </model>
       <light name='sun'>
         <pose>0 0 10 0 -0 0</pose>
+      </light>
+      <light name='user_spot_light_0'>
+        <pose>0 0 0.5 0 -0 0</pose>
       </light>
     </state>
     <model name='static_camera'>
@@ -470,5 +473,23 @@
       </link>
       <static>1</static>
     </model>
+    <light name='user_spot_light_0' type='spot'>
+      <pose>0.082816 0.013998 1 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0 0 -1</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+    </light>
   </world>
 </sdf>

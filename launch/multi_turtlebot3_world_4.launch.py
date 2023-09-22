@@ -30,7 +30,7 @@ def generate_launch_description():
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    x_pose = LaunchConfiguration('x_pose', default='-2.0')
+    x_pose = LaunchConfiguration('x_pose', default='-1.3')
     y_pose = LaunchConfiguration('y_pose', default='-0.5')
 
     world = os.path.join(
@@ -84,7 +84,7 @@ def generate_launch_description():
         ),
         launch_arguments={
             'x_pose': '-0.5',
-            'y_pose': '2.0'
+            'y_pose': '1.0'
         }.items()
     )
 
@@ -102,7 +102,7 @@ def generate_launch_description():
         ),
         launch_arguments={
             'x_pose': '-0.5',
-            'y_pose': '-2.0'
+            'y_pose': '-1.0'
         }.items()
     )
 
@@ -120,7 +120,7 @@ def generate_launch_description():
         ),
         launch_arguments={
             'x_pose': '0.5',
-            'y_pose': '2.0'
+            'y_pose': '1.0'
         }.items()
     )
 
