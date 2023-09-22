@@ -36,7 +36,7 @@ def generate_launch_description():
     world = os.path.join(
         get_package_share_directory('tokuron_gazebo'),
         'worlds',
-        'empty_world.world'
+        'tokuron_world.world'
     )
 
     gzserver_cmd = IncludeLaunchDescription(
