@@ -2,7 +2,7 @@
 ## usage with dokcer 
 - Initial
 ```
-git clone https://github.com/masakifujiwara1/ros2_docker/tree/tokuron
+git clone -b tokuron https://github.com/masakifujiwara1/ros2_docker.git
 cd ros2_docker
 ./run.sh
 ```
