@@ -55,9 +55,9 @@ def generate_launch_description():
     # robot1
     robot_state_publisher_cmd1 = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(launch_file_dir, 'multi_robot_state_publisher.launch.py')
+            os.path.join(launch_file_dir, 'multi_robot_state_publisher2.launch.py')
         ),
-        launch_arguments={'use_sim_time': use_sim_time, 'robot_namespace': 'robot1'}.items(),
+        launch_arguments={'use_sim_time': use_sim_time, 'robot_namespace': 'robot1/'}.items(),
     )
 
     spawn_turtlebot_cmd1 = IncludeLaunchDescription(
@@ -73,9 +73,9 @@ def generate_launch_description():
     # robot2
     robot_state_publisher_cmd2 = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(launch_file_dir, 'multi_robot_state_publisher.launch.py')
+            os.path.join(launch_file_dir, 'multi_robot_state_publisher2.launch.py')
         ),
-        launch_arguments={'use_sim_time': use_sim_time, 'robot_namespace': 'robot2'}.items(),
+        launch_arguments={'use_sim_time': use_sim_time, 'robot_namespace': 'robot2/'}.items(),
     )
 
     spawn_turtlebot_cmd2 = IncludeLaunchDescription(
@@ -91,9 +91,9 @@ def generate_launch_description():
     # robot3
     robot_state_publisher_cmd3 = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(launch_file_dir, 'multi_robot_state_publisher.launch.py')
+            os.path.join(launch_file_dir, 'multi_robot_state_publisher2.launch.py')
         ),
-        launch_arguments={'use_sim_time': use_sim_time, 'robot_namespace': 'robot3'}.items(),
+        launch_arguments={'use_sim_time': use_sim_time, 'robot_namespace': 'robot3/'}.items(),
     )
 
     spawn_turtlebot_cmd3 = IncludeLaunchDescription(
@@ -109,9 +109,9 @@ def generate_launch_description():
     # robot4
     robot_state_publisher_cmd4 = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(launch_file_dir, 'multi_robot_state_publisher.launch.py')
+            os.path.join(launch_file_dir, 'multi_robot_state_publisher2.launch.py')
         ),
-        launch_arguments={'use_sim_time': use_sim_time, 'robot_namespace': 'robot4'}.items(),
+        launch_arguments={'use_sim_time': use_sim_time, 'robot_namespace': 'robot4/'}.items(),
     )
 
     spawn_turtlebot_cmd4 = IncludeLaunchDescription(
